@@ -112,9 +112,13 @@ const Formregister = () => {
     } else {
       setErrors(true);
     }
-    
+    if (!isError) {
+      storeData();
+    }
   }
-  
+  function storeData() {
+    window.localStorage.setItem('userData', JSON.stringify(userValues));
+  }
 
   return (
     <div className="formcomponent">

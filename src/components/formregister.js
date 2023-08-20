@@ -35,7 +35,7 @@ const Formregister = () => {
     mobile: 0,
     ischeck: false,
   };
-  let [isError, setErrors] = useState(false);
+  let [isError, setErrors] = useState(true);
   let [userValues, setUservalue] = useState(initialValues);
   let [userErrors, setUsererrors] = useState(Errors);
 
@@ -86,6 +86,7 @@ const Formregister = () => {
     setUservalue({ ...userValues, ischeck: e.target.checked });
     if (e.target.checked) {
       setUsererrors({ ...userErrors, checkbox: '' });
+      setErrors(true);
     } else {
       setUsererrors({
         ...userErrors,
@@ -96,25 +97,43 @@ const Formregister = () => {
 
   function dataHandle(e) {
     e.preventDefault();
+    let error = false;
+    if (userValues.name === '') {
+      setUsererrors({ ...userErrors, checkbox: 'Fields are invalid' });
+      error = true;
+    }
+    if (userValues.username === '') {
+      error = true;
+      setUsererrors({ ...userErrors, checkbox: 'Fields are invalid' });
+    }
+    if (userValues.email === '') {
+      error = true;
+      setUsererrors({ ...userErrors, checkbox: 'Fields are invalid' });
+    }
+    if (userValues.mobile === 0) {
+      error = true;
+      setUsererrors({
+        ...userErrors,
+        checkbox: 'Fields are invalid',
+      });
+    }
+    if (!userValues.ischeck) {
+      error = true;
+      setUsererrors({
+        ...userErrors,
+        checkbox: 'Fields are invalid',
+      });
+    }
     if (
-      userValues.name !== '' &&
-      userValues.email !== '' &&
-      userValues.mobile !== 0 &&
-      userValues.ischeck !== false &&
-      userValues.username !== '' &&
       userErrors.name === '' &&
       userErrors.email === '' &&
       userErrors.mobile === '' &&
       userErrors.checkbox === '' &&
-      userErrors.username === ''
+      userErrors.username === '' &&
+      !error
     ) {
-      setErrors(false);
-    } else {
-      setErrors(true);
-    }
-    if (!isError) {
       storeData();
-    }
+    } 
   }
   function storeData() {
     window.localStorage.setItem('userData', JSON.stringify(userValues));

@@ -1,0 +1,108 @@
+.heading {
+  color: #72db73;
+  font-family: Single Day;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 139.688%; /* 93.591px */
+}
+.subheading {
+  color: #fff;
+  font-family: DM Sans;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 139.688%; /* 34.922px */
+  margin-bottom: 2vh;
+}
+.formcomponent {
+  background-color: #000;
+  padding-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+input {
+  border-radius: 3.816px;
+  background: #292929;
+  font-size: 20.033px;
+  width: 50vh;
+  height: 6vh;
+  color: #fff;
+  padding-left: 2vh;
+  margin: 1vh;
+  border: none;
+}
+::placeholder {
+  color: #7c7c7c;
+  font-family: DM Sans;
+  font-size: 20.033px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 139.688%; /* 27.984px */
+  letter-spacing: 0.401px;
+}
+.checkbox {
+  height: 2.5vh;
+  margin: 0 !important;
+  padding: 0;
+  position: absolute;
+  left: 3%;
+}
+.checkcontent {
+  width: 50vh;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 3vh;
+  & label {
+    margin-left: 5vh;
+    color: #7c7c7c;
+    font-family: DM Sans;
+    font-size: 15.033px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 139.688%; /* 27.984px */
+    letter-spacing: 0.401px;
+    width: 50vh;
+  }
+}
+
+#btnsignup {
+  border-radius: 28px;
+  background: #72db73;
+  width: 50vh;
+  height: 6vh;
+  flex-shrink: 0;
+  margin-top: 4vh;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 108.688%; /* 31.519px */
+  letter-spacing: 0.58px;
+}
+.declaration {
+  margin-top: 2vh;
+  color: #7c7c7c;
+  font-family: Roboto;
+  font-size: 13px;
+  width: 50vh;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 141.7%; /* 25.506px */
+  letter-spacing: 0.36px;
+  text-align: left;
+}
+.greentext {
+  color: #72db73;
+  font-family: Roboto;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 141.7%;
+  letter-spacing: 0.36px;
+}

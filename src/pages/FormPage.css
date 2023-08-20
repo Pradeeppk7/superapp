@@ -28,6 +28,7 @@
   max-height: 100vh;
   position: relative;
   & .forms{
-    margin:auto ;
+    display: flex;
+    justify-content: center;
   }
 }

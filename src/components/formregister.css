@@ -6,6 +6,17 @@
   font-weight: 400;
   line-height: 139.688%; /* 93.591px */
 }
+#checkboxerror{
+  align-self: start;
+  margin-top: .8vh;
+}
+h1{
+  color: #72db73;
+}
+.inputerror{
+  color: red;
+  font-size: 1.8vh;
+}
 .subheading {
   color: #fff;
   font-family: DM Sans;
@@ -13,33 +24,40 @@
   font-style: normal;
   font-weight: 400;
   line-height: 139.688%; /* 34.922px */
-  margin-bottom: 2vh;
+  margin-bottom: 1vh;
 }
 .formcomponent {
   background-color: #000;
-  padding-top: 10vh;
+  padding-top: 7vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
+  max-height: 90vh;
+  width: 48vh;
 }
 
 input {
   border-radius: 3.816px;
   background: #292929;
-  font-size: 20.033px;
-  width: 50vh;
-  height: 6vh;
+  font-size: 16px;
+  width: 48vh;
+  height: 5.5vh;
   color: #fff;
   padding-left: 2vh;
-  margin: 1vh;
-  border: none;
+  margin-top: 1.5vh;
+  border:none;
 }
+.redbox{
+  border: 1px solid red !important;
+  
+}
+
 ::placeholder {
   color: #7c7c7c;
   font-family: DM Sans;
-  font-size: 20.033px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 139.688%; /* 27.984px */
@@ -50,15 +68,15 @@ input {
   margin: 0 !important;
   padding: 0;
   position: absolute;
-  left: 3%;
+  left: -49%;
 }
 .checkcontent {
-  width: 50vh;
+  width: 48vh;
   display: flex;
   justify-content: flex-start;
   margin-top: 3vh;
   & label {
-    margin-left: 5vh;
+    margin-left: 3vh;
     color: #7c7c7c;
     font-family: DM Sans;
     font-size: 15.033px;
@@ -73,7 +91,7 @@ input {
 #btnsignup {
   border-radius: 28px;
   background: #72db73;
-  width: 50vh;
+  width: 48vh;
   height: 6vh;
   flex-shrink: 0;
   margin-top: 4vh;
@@ -90,7 +108,7 @@ input {
   color: #7c7c7c;
   font-family: Roboto;
   font-size: 13px;
-  width: 50vh;
+  width: 48vh;
   font-style: normal;
   font-weight: 500;
   line-height: 141.7%; /* 25.506px */

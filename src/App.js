@@ -1,10 +1,17 @@
-import logo from './logo.svg';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-import FormPage from './pages/FormPage';
+import Category from "./pages/Category";
+import FormPage from "./pages/FormPage";
+
 function App() {
   return (
     <div className="App">
-      <FormPage/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<FormPage />} />
+          <Route path="/category" element={<Category />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

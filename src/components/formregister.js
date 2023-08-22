@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 import './formregister.css';
 // #region constants
 
@@ -38,6 +38,7 @@ const Formregister = () => {
   let [isError, setErrors] = useState(true);
   let [userValues, setUservalue] = useState(initialValues);
   let [userErrors, setUsererrors] = useState(Errors);
+  const navigate = useNavigate();
 
   function validationCheck(e) {
     if (e.target.placeholder === 'Name') {
@@ -47,6 +48,7 @@ const Formregister = () => {
         setUsererrors({ ...userErrors, name: 'Please fill the valid Name' });
       } else {
         setUsererrors({ ...userErrors, name: '' });
+        setErrors(false);
       }
     } else if (e.target.placeholder === 'UserName') {
       if (e.target.value === '') {
@@ -58,6 +60,7 @@ const Formregister = () => {
         });
       } else {
         setUsererrors({ ...userErrors, username: '' });
+        setErrors(false);
       }
     } else if (e.target.placeholder === 'Email') {
       if (e.target.value === '') {
@@ -66,19 +69,24 @@ const Formregister = () => {
         setUsererrors({ ...userErrors, email: 'Please fill the valid Email' });
       } else {
         setUsererrors({ ...userErrors, email: '' });
+        setErrors(false);
       }
     } else if (e.target.placeholder === 'Mobile') {
       console.log(e.target.placeholder);
 
       if (e.target.value === '') {
         setUsererrors({ ...userErrors, mobile: 'Field is required' });
-      } else if (!e.target.value.match('[0-9]{10}')) {
+      } else if (
+        !e.target.value.match('[0-9]{10}') ||
+        e.target.value.length > 10
+      ) {
         setUsererrors({
           ...userErrors,
           mobile: 'Please fill the valid Number',
         });
       } else {
         setUsererrors({ ...userErrors, mobile: '' });
+        setErrors(false);
       }
     }
   }
@@ -133,7 +141,8 @@ const Formregister = () => {
       !error
     ) {
       storeData();
-    } 
+      navigate('/category');
+    }
   }
   function storeData() {
     window.localStorage.setItem('userData', JSON.stringify(userValues));
@@ -170,9 +179,10 @@ const Formregister = () => {
       />
       <span className="inputerror">{userErrors.email}</span>
       <input
-        type="number"
+        type="tel"
         placeholder="Mobile"
         className={userErrors.mobile.length > 0 ? 'redbox' : 'normal'}
+        maxLength="9999999999"
         onChange={(e) =>
           setUservalue({ ...userValues, mobile: e.target.value })
         }

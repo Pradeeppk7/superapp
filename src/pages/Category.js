@@ -42,6 +42,10 @@ const Category = () => {
   function handleSubmit() {
     if (categories.length > 2) {
       window.localStorage.setItem('category', JSON.stringify(categories));
+      navigate('/dashboard');
+    }
+    else {
+      setWarning(false);
     }
   }
 

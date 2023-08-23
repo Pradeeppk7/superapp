@@ -1,0 +1,114 @@
+.dashboard-bg {
+  background-color: black;
+  display: flex;
+}
+.db-left {
+  height: 100vh;
+  width: 66.6666666666666666vw;
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+}
+.db-right {
+  background-color: aquamarine;
+  height: 100vh;
+  width: 33.3333333333333333333333333vw;
+}
+.db-upper {
+  background-color: bisque;
+  height: 66.66vh;
+  width: 66.66vw;
+  display: flex;
+  flex-direction: row;
+  & .db-upper-left {
+    background-color: chartreuse;
+    height: 66.66vh;
+    width: 33.333vw;
+    display: flex;
+    flex-direction: column;
+  }
+  & .db-upper-rightnotes {
+    background-color: cornflowerblue;
+    height: 66.66vh;
+    width: 33.33vw;
+  }
+}
+.db-lower-timer {
+  background-color: blueviolet;
+  height: 33.33vh;
+  width: 66.66vw;
+}
+.profile {
+  height: 44.444vh;
+  width: 33.33vw;
+  background-color: coral;
+}
+.weather {
+  height: 22.22vh;
+  width: 33.33vw;
+  background-color: cadetblue;
+}
+
+.profilecontent {
+  border-radius: 19px;
+  background: #5746ea;
+  display: flex;
+  padding: 3vh 0vh 3vh 4vh;
+  margin: 2vh;
+  height: 34vh;
+  & img {
+    height: 34vh;
+  }
+}
+
+.ctn {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0vh;
+  padding-left: 5vh;
+  & .username,
+  .useremail {
+    color: #fff;
+    margin-top: 1vh;
+    font-family: Roboto;
+    font-size: 3vh;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 103.188%; /* 21.669px */
+    letter-spacing: 0.42px;
+  }
+  & .userid {
+    color: #fff;
+    font-family: Roboto;
+    font-size: 5vh;
+    margin-top: 2vh;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 66.188%; /* 27.137px */
+    letter-spacing: 0.82px;
+  }
+}
+.db-chips {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 3vh;
+  & .chipsbtn {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 2vh;
+    height: 2.8vh;
+    width: 15vh;
+    padding: 1vh;
+    margin-bottom: 1vh;
+    margin-right: 2vh;
+    background: #9f94ff;
+    font-family: Roboto;
+    font-size: 2vh;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105.688%; /* 16.91px */
+    letter-spacing: 0.32px;
+  }
+}

@@ -1,0 +1,30 @@
+.chips {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 3vh;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 105.688%; /* 26.573px */
+  letter-spacing: 0.503px;
+  border-radius: 31px;
+  background: #148a08;
+  padding: 1vh;
+  width: 20vh;
+  margin-right: 2vh;
+  margin-top: 2vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 2vh;
+  & button {
+    color: #085c00;
+    font-family: Roboto;
+    font-size: 26.333px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105.688%; /* 27.831px */
+    letter-spacing: 0.527px;
+    background-color: #148a08;
+    border: none;
+  }
+}

@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
-import dp from '../assets/dashboarddp.png';
+
 import axios from 'axios';
-import { render } from '@testing-library/react';
+import Profile from '../components/dashboard/Profile';
+import Notes from '../components/dashboard/Notes';
+
+
 // #region constants
 
 // #endregion
@@ -25,23 +28,34 @@ const defaultProps = {};
  */
 const Dashboard = () => {
   const apinewKey = '2c625dad350447aab637bd859c2158a4';
-  const userdata = JSON.parse(localStorage.getItem('userData'));
-  const category = JSON.parse(localStorage.getItem('category'));
+ 
   let [news, setNews] = useState([]);
+  //   useEffect(()=>{
+  //     const fetchNews = async()=>{
+  //        await axios
+  //        .get(
+  //          'https://newsapi.org/v2/everything?q=India&from=2023-08-23&sortBy=popularity&pageSize=1&language=en&apiKey=' +
+  //            apinewKey
+  //        ).then(async(res) =>await(res.data.articles)).then((articles)=>console.log(articles.title))
+  //        .catch((err) => {
+  //          console.log('something wrong');
+  //        });
+  //     }
+  //     fetchNews();
+  // },[])
 
-  // fetchNews();
-
-  // function fetchNews() {
-  //   axios
-  //     .get(
+  // useEffect(() => {
+  //   const fetchNews = async () => {
+  //     await fetch(
   //       'https://newsapi.org/v2/everything?q=India&from=2023-08-23&sortBy=popularity&pageSize=1&language=en&apiKey=' +
   //         apinewKey
   //     )
-  //     .then((res) => setNews(res.data.articles))
-  //     .catch((err) => {
-  //       alert('something wrong');
-  //     });
-  // }
+  //       .then(async (data) => await data.json())
+  //       .then((res) => console.log(res.articles.author));
+  //   };
+  //   fetchNews();
+    
+  // }, []);
 
   return (
     <div className="dashboard-bg">
@@ -49,33 +63,23 @@ const Dashboard = () => {
         <div className="db-upper">
           <div className="db-upper-left">
             <div className="profile">
-              <div className="profilecontent">
-                <img src={dp} alt="" />
-                <div className="ctn">
-                  <h1 className="username">{userdata.name}</h1>
-                  <h1 className="useremail">{userdata.email}</h1>
-                  <h1 className="userid">{userdata.username}</h1>
-                  <div className="db-chips">
-                    {category.map((item, index) => (
-                      <div className="chipsbtn" key={index}>
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+             <Profile/>
             </div>
             <div className="weather"></div>
           </div>
-          <div className="db-upper-rightnotes"></div>
+          <div className="db-upper-rightnotes">
+            <Notes/>
+          </div>
         </div>
         <div className="db-lower-timer"></div>
       </div>
       <div className="db-right">
         <div className="newssection">
-          <h6>{news.author}
-          <br></br>
-          {news.title}</h6>
+          <h6>
+            {news.author}
+            <br></br>
+            {news.title}
+          </h6>
         </div>
       </div>
     </div>

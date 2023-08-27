@@ -4,6 +4,7 @@ import './Dashboard.css';
 import axios from 'axios';
 import Profile from '../components/dashboard/Profile';
 import Notes from '../components/dashboard/Notes';
+import Weather from '../components/dashboard/Weather';
 
 
 // #region constants
@@ -65,7 +66,9 @@ const Dashboard = () => {
             <div className="profile">
              <Profile/>
             </div>
-            <div className="weather"></div>
+            <div className="weather">
+              <Weather/>
+            </div>
           </div>
           <div className="db-upper-rightnotes">
             <Notes/>

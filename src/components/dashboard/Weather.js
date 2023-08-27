@@ -32,26 +32,27 @@ const Weather = () => {
   // let [conditionimg, setConditionimg] = useState();
   //let [weather, setWeather] = useState();
 
-  useEffect(() => {
+  
     const fetchWeather = async () => {
       await axios
         .get(
           'https://api.weatherapi.com/v1/current.json?key=7dae42bd7c0041f285e172820232608&q=India&aqi=no'
         )
         .then(
-          async (res) =>
-            await res.then(
+           (res) =>
+            
               setWeather(res.data)
               // setLocalDate(res.data.location.localtime.slice(0, 10)),
               // setLocaltime(res.data.location.localtime.slice(11, 16)), setCondition(res.data.current.condition.text), setConditionimg(res.data.current.condition.icon),
             )
-        )
+        
         .catch((err) => {
-          console.log('something wrong');
+          console.log(err);
         });
-    };
+  };
+  
     fetchWeather();
-  });
+ 
 
   return (
     <div className="weathersection">

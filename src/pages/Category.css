@@ -61,8 +61,7 @@
   width: 40vw;
   display: flex;
   margin-top: 2.5vh;
-  justify-content: end;
-  align-items: end;
+  justify-content: flex-end;
 }
 .warning {
   margin-top: 2vh;

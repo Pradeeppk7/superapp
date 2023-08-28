@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+
 import './Dashboard.css';
-
-
+import { useNavigate } from 'react-router-dom';
 import Profile from '../components/dashboard/Profile';
 import Notes from '../components/dashboard/Notes';
 import Weather from '../components/dashboard/Weather';
@@ -31,7 +30,10 @@ const defaultProps = {};
  */
 const Dashboard = () => {
  
-
+  const navigate = useNavigate();
+  function navi() {
+    navigate('/browse');
+  }
   return (
     <div className="dashboard-bg">
       <div className="db-left">
@@ -55,6 +57,7 @@ const Dashboard = () => {
       <div className="db-right">
         <News></News>
       </div>
+    <div className="btndashboard"><button onClick={navi}>Browse</button></div>
     </div>
   );
 };

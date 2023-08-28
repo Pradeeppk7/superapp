@@ -1,54 +1,68 @@
 .dashboard-bg {
   background-color: black;
   display: flex;
+  position: relative;
 }
 .db-left {
   height: 100vh;
   width: 66.6666666666666666vw;
-  background-color: blue;
+
   display: flex;
   flex-direction: column;
 }
 .db-right {
-  background-color: aquamarine;
   height: 100vh;
   width: 33.3333333333333333333333333vw;
 }
 .db-upper {
-  background-color: bisque;
   height: 66.66vh;
   width: 66.66vw;
   display: flex;
   flex-direction: row;
   & .db-upper-left {
-    background-color: chartreuse;
     height: 66.66vh;
     width: 33.333vw;
     display: flex;
     flex-direction: column;
   }
   & .db-upper-rightnotes {
-    background-color: cornflowerblue;
     height: 66.66vh;
     width: 33.33vw;
   }
 }
 .db-lower-timer {
-  background-color: blueviolet;
   height: 33.33vh;
   width: 66.66vw;
 }
 .profile {
   height: 44.444vh;
   width: 33.33vw;
-  background-color: coral;
 }
 .weather {
   height: 22.22vh;
   width: 33.33vw;
-  background-color: cadetblue;
 }
 
-h6{
+h6 {
   color: rgb(4, 4, 4);
+}
+.btndashboard {
+  position: absolute;
+  bottom: 3vh;
+  right: 3vh;
+  & button {
+    height: 6vh;
+    width: 8vw;
+    padding: 1vh;
+    border-radius: 34.777px;
+    background: #148a08;
+    color: #fff;
+    text-align: center;
+    font-family: DM Sans;
+    font-size: 23.526px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 92.2%; /* 21.691px */
+    letter-spacing: 0.471px;
+  }
 }

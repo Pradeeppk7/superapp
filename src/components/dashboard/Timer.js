@@ -57,14 +57,14 @@ const Timer = () => {
   }
 
   function increaseSec() {
-    if (seconds == 60) {
+    if (seconds === 60) {
       return;
     }
     setSeconds(seconds + 1);
     return;
   }
   function increaseMin() {
-    if (minutes == 60) {
+    if (minutes === 60) {
       return;
     }
     setMinutes(minutes + 1);
@@ -76,19 +76,19 @@ const Timer = () => {
   }
 
   function decreaseMin() {
-    if (minutes == 0) {
+    if (minutes === 0) {
       return;
     }
     setMinutes(minutes - 1);
   }
   function decreaseSec() {
-    if (seconds == 0) {
+    if (seconds === 0) {
       return;
     }
     setSeconds(seconds - 1);
   }
   function decreaseHour() {
-    if (hours == 0) {
+    if (hours === 0) {
       return;
     }
     setHours(hours - 1);

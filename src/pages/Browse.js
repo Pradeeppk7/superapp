@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Browse.css';
 import dp from '../assets/browsedp.png';
+import Movieblocks from '../components/Movie/Movieblocks';
 // #region constants
 
 // #endregion
@@ -22,6 +23,10 @@ const defaultProps = {};
  *
  */
 const Browse = () => {
+  let [category, setCategory] = useState();
+
+  let data = JSON.parse(localStorage.getItem('category'));
+
   return (
     <div className="browse">
       <div className="browse-header">
@@ -29,8 +34,14 @@ const Browse = () => {
         <img src={dp} alt="" />
       </div>
       <div className="browse-content">
-        <div className="browse-subheading"><p>Entertainment according to your choice</p></div>
-        <div className="browse-collections">{}</div>
+        <div className="browse-subheading">
+          <p>Entertainment according to your choice</p>
+        </div>
+        <div className="browse-collections">
+          {data.map((item, index) => (
+            <Movieblocks key={index} movie={item} />
+          ))}
+        </div>
       </div>
     </div>
   );

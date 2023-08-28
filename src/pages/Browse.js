@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './Browse.css';
 import dp from '../assets/browsedp.png';
 import Movieblocks from '../components/Movie/Movieblocks';
-import { Navigate } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 // #region constants
 

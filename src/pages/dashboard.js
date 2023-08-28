@@ -6,6 +6,7 @@ import Profile from '../components/dashboard/Profile';
 import Notes from '../components/dashboard/Notes';
 import Weather from '../components/dashboard/Weather';
 import News from '../components/dashboard/News';
+import Timer from '../components/dashboard/Timer';
 
 
 // #region constants
@@ -47,7 +48,9 @@ const Dashboard = () => {
             <Notes/>
           </div>
         </div>
-        <div className="db-lower-timer"></div>
+        <div className="db-lower-timer">
+          <Timer></Timer>
+        </div>
       </div>
       <div className="db-right">
         <News></News>

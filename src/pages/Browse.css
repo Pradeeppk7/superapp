@@ -2,6 +2,25 @@
   background-color: black;
   min-height: 100vh;
   max-width: 100vw;
+  position: relative;
+  & button{
+    position: sticky;
+    bottom: 5vh;
+    margin-left: 90vw;
+    height: 6vh;
+    width: 8vw;
+    padding: 1vh;
+    border-radius: 34.777px;
+    background: #148a08;
+    color: #fff;
+    text-align: center;
+    font-family: DM Sans;
+    font-size: 23.526px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 92.2%; /* 21.691px */
+    letter-spacing: 0.471px;
+  }
 }
 .browse-header {
   display: flex;
@@ -30,4 +49,7 @@
 }
 .browse-content {
   padding-inline: 8vh;
+}
+.browse-collections{
+    padding-bottom: 6vh;
 }

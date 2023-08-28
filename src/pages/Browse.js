@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './Browse.css';
 import dp from '../assets/browsedp.png';
 import Movieblocks from '../components/Movie/Movieblocks';
+import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 // #region constants
 
 // #endregion
@@ -24,9 +26,12 @@ const defaultProps = {};
  */
 const Browse = () => {
   let [category, setCategory] = useState();
+  const navigate = useNavigate();
 
   let data = JSON.parse(localStorage.getItem('category'));
-
+  function navi() {
+    navigate('/category');
+  }
   return (
     <div className="browse">
       <div className="browse-header">
@@ -43,6 +48,7 @@ const Browse = () => {
           ))}
         </div>
       </div>
+      <button onClick={navi}>Home</button>
     </div>
   );
 };
